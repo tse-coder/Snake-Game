@@ -1,0 +1,230 @@
+*{
+    font-family: cursive;
+}
+body{
+    background: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+/* ---------------play-area---------- */
+.gameArea{
+    border:4px solid #ff2bb2;
+    border-radius: 10px;
+}
+#gameBoard{
+    background: #456;
+    width: 420px;
+    height: 420px;
+    grid-template-columns: repeat(20,20px);
+    grid-template-rows: repeat(20,20px);
+    gap: 1px;
+    display: none;
+    
+}
+.snake{
+    background-color: rgb(255, 251, 1);
+    border-radius: 40%;
+    position: relative;
+    box-shadow: inset 2px 2px 7px 2px #0003,
+    inset -2px -2px 5px #fff;
+}
+.eye1{
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    background: #000;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+}
+.eye2{
+    position: absolute;
+    top: 30%;
+    right: 25%;
+    background: #000;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+}
+.mouth{
+    position: absolute;
+    bottom: 20%;
+    right: 35%;
+    background: #000;
+    width: 6px;
+    height: 2px;
+}
+.food{
+    background-color: rgb(253, 253, 255);
+    border-radius: 50%;
+    box-shadow: inset 2px 2px 5px #0006,
+    inset -2px -2px 5px #fff;
+}
+.details{
+    color:#ff2bb2;
+    height: 0px;
+    width: 420px;
+    display: none;
+    position: relative;
+}
+.display-score{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+    font-size: 30px;
+    background:#ff2bb222;
+    font-family: monospace;
+    height: 50px;
+}
+.controls{
+    display: none;
+    place-items: center;
+}
+@media (max-width: 600px) {
+    .controls{
+        display: grid;
+    }
+    .details{
+        height: 250px;
+    }
+    body{
+        transform: scale(0.8);
+    }
+} 
+/* ----------before-starting-the-game------------- */
+.gate{
+    color: #fff;
+    position: absolute;
+    background: #593449;
+    width: 300px;
+    height: 350px;
+    top: 100px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 30px;
+    border: 2px solid #ff2bb2;
+}
+.gate h1 span{
+    font-family: cursive;
+    color: #ff2bb2;
+    animation: gate 2s linear 1s;
+    position: relative;
+}
+@keyframes gate {
+    0%{top: -60px;}
+    20%{top: 0px;}
+    40%{top: -20px;}
+    60%{top: 0px;}
+    80%{top: -10px;}
+    100%{top: 0px;}
+}
+.dificulty-selector{
+    background: #ff2bb255;
+    padding: 30px;
+    border: 2px solid #ff2bb2;
+    border-radius: 20px;
+    position: relative;
+}
+.dificulty-selector h3{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.dificulty-selector h3::before{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.dificulty-selector h3::after,
+.dificulty-selector h3::before{
+    content: '';
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 3px;
+    width: 20%;
+    background: #ff2bb2;
+    animation: widen 3s linear infinite;
+}
+.dificulty-selector h3::before{
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+@keyframes widen {
+    50%{width: 70%;}
+}
+.levels{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.levels button{
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: #ff2bb292;
+    color: #fff;
+    font-weight: 900;
+}
+.levels button:hover{
+    outline: 2px solid #ff2bb2;
+}
+
+/* -------------after-finishing-the-game--------------- */
+.restart{
+    width: 300px;
+    height: 300px;
+    border: 3px solid #ff2bb2;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.3);
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    color: #fff;
+    background: #ff2bb244;
+}
+.restart.active{
+    visibility: visible;
+    transform: scale(1);
+    transition: 0.5s;
+    top: 20%;
+}
+.restart h1{
+    font-size: 30px
+}
+.restart button{
+    padding: 10px 20px;
+    display: block;
+    background: #0006;
+    color: #f0f0f0;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    animation: resize 1s linear infinite;
+    color: #fff9;
+}
+@keyframes resize {
+    50%{scale: 120%;}
+}
+.restart button:hover{
+    outline:2px solid #ff2bb2;
+    background: #0002;
+    color:#ff2bb2;
+}

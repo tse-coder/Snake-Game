@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="gameArea">
+    <div id="gameBoard">
+        <div class="snake">
+            <div class="eye1"></div>
+            <div class="eye2"></div>
+            <div class="mouth"></div>
+        </div> 
+        <div class="food"></div>
+    </div>
+    <div class="details">
+        <div class="display-score">score: _</div>
+        <div class="controls">
+            <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="80" fill="#ddd" />
+                <!-- Up Arrow -->
+                <polygon onclick= "setNewMove(moveUP,MainSpeed)" id="up-arrow" points="100,30 80,60 120,60" fill="#555" />
+                <!-- Down Arrow -->
+                <polygon onclick= "setNewMove(moveDown,MainSpeed)" id="down-arrow" points="100,170 80,140 120,140" fill="#555" />
+                <!-- Left Arrow -->
+                <polygon onclick= "setNewMove(moveLeft,MainSpeed)" id="left-arrow" points="30,100 60,80 60,120" fill="#555" />
+                <!-- Right Arrow -->
+                <polygon onclick= "setNewMove(moveRight,MainSpeed)" id="right-arrow" points="170,100 140,80 140,120" fill="#555" />
+              </svg>
+        </div>
+    </div>
+    </div>
+    <div class="gate">
+        <h1>The <span>snake</span> game</h1>
+        <p>created by Tsegaye</p>
+        <div class="dificulty-selector">
+            <h3>choose dificulty level</h3>
+            <div class="levels">
+                <button onclick="startGame(400)">Easy</button>
+                <button onclick="startGame(200)">Medium</button>
+                <button onclick="startGame(160)">Hard</button>
+            </div>
+        </div>
+    </div>
+    <div class="restart">
+        <h1>Game over</h1>
+        <p class="final-score"></p>
+        <button onclick="restart()">Restart</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
