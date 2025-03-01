@@ -24,4 +24,4 @@ open index.html
 6. use space bar to pause the game 
 
 ## 🌟 Demo
-Check out the live version ![here]([https://snake-game-nzco.onrender.com]).
+Check out the live version [here](https://snake-game-nzco.onrender.com).
