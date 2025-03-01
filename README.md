@@ -7,6 +7,13 @@ A classic Snake Game built with **HTML**, **CSS Grid**, and **JavaScript**! 🎮
 - Smooth gameplay with JavaScript logic 💡
 - Retro-style snake mechanics 🐍🍎
 - Fun and addictive! 🔥
+  
+## 🛠️ Installation
+```bash
+git clone https://github.com/tse-coder/tse-coder.github.io.git
+cd snake-game
+open index.html
+```
 
 ## 🚀 How to Play
 1. Clone or download the repository.
@@ -16,18 +23,5 @@ A classic Snake Game built with **HTML**, **CSS Grid**, and **JavaScript**! 🎮
 5. Avoid crashing into the walls or yourself!
 6. use space bar to pause the game 
 
-## 📂 Project Structure
-- `index.html` - The main HTML file.
-- `style.css` - The game design using CSS Grid.
-- `script.js` - The game logic.
-
 ## 🌟 Demo
-Check out the live version [here](https://tse-coder.github.io).
-
-## 🛠️ Installation
-```bash
-git clone https://github.com/tse-coder/tse-coder.github.io.git
-cd snake-game
-open index.html
-```
-![image](https://github.com/user-attachments/assets/8273f09f-6cad-40e6-96bd-ec0630d34ee5)
+Check out the live version [here]([https://snake-game-nzco.onrender.com]).
